@@ -24,7 +24,7 @@ class Student:
         included in the list.
 
         Args:
-            attrs: Attributes to represent.
+            attrs: (Optional) The attributes to represent.
         """
         if (type(attrs) == list and
                 all(type(ele) == str for ele in attrs)):
@@ -35,7 +35,7 @@ class Student:
         """Replaces all attributes of the Student.
 
         Args:
-            json: Value/Key pairs to replace attributes with.
+            json: The key/value pairs to replace attributes with.
         """
         for k, v in json.items():
             setattr(self, k, v)
