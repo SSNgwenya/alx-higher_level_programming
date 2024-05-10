@@ -1,33 +1,22 @@
 #!/usr/bin/python3
-"""Script that displays all values in the states table
-of hbtn_0e_0_usa where name matches the argument."""
+
+"""Module that lists all states from the hbtn_0e_0_usa database."""
+
 import sys
 import MySQLdb
 
 if __name__ == "__main__":
-    # Get MySQL credentials and database name from command-line arguments
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
-    state_name = sys.argv[4]
 
-    # Connect to MySQL server
-    db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=database)
+    # Get MySQL credentials and search name from command-line arguments
+    # and # Connect to MySQL server
+    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+    c = db.cursor()
 
-    # Create a cursor object using cursor() method
-    cursor = db.cursor()
+    # Execute the SQL query to retrieve states with the specified name
+    c.execute("SELECT * \
+                 FROM `states` \
+                WHERE BINARY `name` = '{}'".format(sys.argv[4]))
 
-    # Execute SQL query to select states where name matches the argument
-    sql_query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-    cursor.execute(sql_query, (state_name,))
-
-    # Fetch the first row
-    result = cursor.fetchone()
-
-    # Display the result
-    if result:
-        print(result)
-
-    # Disconnect from server
-    db.close()
+    # Fetch all rows and print the states
+    [print(state) for state in c.fetchall()]
 
