@@ -12,5 +12,6 @@ function add (a, b) {
     console.log(`The addition of ${num1} and ${num2} is: ${result}`);
   }
 }
+
 const args = process.argv.slice(2);
 add(args[0], args[1]);
