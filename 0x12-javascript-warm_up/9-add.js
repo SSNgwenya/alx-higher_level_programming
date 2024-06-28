@@ -1,8 +1,8 @@
 #!/usr/bin/node
 // This script prints the addition of 2 integers
 
-function add(a, b) {
-    console.log(a + b);
+function add (a, b) {
+  console.log(a + b);
 }
 
 // Example usage:
