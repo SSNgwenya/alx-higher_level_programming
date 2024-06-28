@@ -14,4 +14,9 @@ function add (a, b) {
 }
 
 const args = process.argv.slice(2);
-add(args[0], args[1]);
+
+if (args.length < 2) {
+  console.log('Please provide two integer arguments.');
+} else {
+  add(args[0], args[1]);
+}
