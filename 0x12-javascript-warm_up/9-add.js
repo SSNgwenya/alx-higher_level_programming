@@ -1,22 +1,12 @@
 #!/usr/bin/node
 // This script prints the addition of 2 integers
 
-function add (a, b) {
-  const num1 = parseInt(a, 10);
-  const num2 = parseInt(b, 10);
-
-  if (isNaN(num1) || isNaN(num2)) {
-    console.log('Invalid input. Both arguments must be integers.');
-  } else {
-    const result = num1 + num2;
-    console.log(`The addition of ${num1} and ${num2} is: ${result}`);
-  }
+function add(a, b) {
+    console.log(a + b);
 }
 
-const args = process.argv.slice(2);
+// Example usage:
+const firstInt = parseInt(process.argv[2], 10);
+const secondInt = parseInt(process.argv[3], 10);
 
-if (args.length < 2) {
-  console.log('Please provide two integer arguments.');
-} else {
-  add(args[0], args[1]);
-}
+add(firstInt, secondInt);
