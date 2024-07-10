@@ -3,5 +3,5 @@
 
 const { list } = require('./100-data');
 const transformedList = list.map((value, index) => value * index);
-console.log('Original list:', list);
-console.log('Transformed list:', transformedList);
+console.log(list);
+console.log(transformedList);
