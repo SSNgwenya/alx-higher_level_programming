@@ -5,9 +5,7 @@ const Rectangle = require('./4-rectangle');
 
 class Square extends Rectangle {
   constructor (size) {
-    // Since Square inherits from Rectangle, we call super() to invoke the constructor of Rectangle
-    super(size, size);
+    super(size, size); // Calls the constructor of Rectangle with size as both width and height
   }
 }
-
 module.exports = Square;
