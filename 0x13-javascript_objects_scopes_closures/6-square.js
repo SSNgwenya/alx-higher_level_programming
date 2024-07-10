@@ -1,4 +1,5 @@
-// 6-square.js
+#!/usr/bin/node
+// This class defines a square and inherits from Square of 5-square.js
 
 const Square = require('./5-square');
 
